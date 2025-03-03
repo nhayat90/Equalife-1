@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equalife Healthcare - Innovative Medical Solutions</title>
+    <meta name="description" content="Equalife Healthcare - Delivering cutting-edge medical devices to healthcare providers across the US and beyond for over 25 years.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #00cc00;
+            --primary-dark: #009900;
+            --secondary: #0088cc;
+            --dark: #111;
+            --light: #fff;
+            --grey: #f9f9f9;
+            --text: #333;
+            --text-light: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Common Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(0, 0, 0, 1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            color: var(--light);
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--primary);
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 204, 0, 0.4);
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 204, 0, 0.6);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--light);
+            box-shadow: none;
+        }
+
+        .cta-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#hero" class="logo">Equalife <span>Healthcare</span></a>
+                <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#offerings">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Innovative Medical Solutions for Healthcare Providers</h1>
+                <p>Delivering cutting-edge medical devices and consumable products to healthcare providers across the US and beyond for over 25 years.</p>
+                <div class="cta-buttons">
+                    <a href="#offerings" class="cta-btn">Explore Our Products</a>
+                    <a href="#contact" class="cta-btn secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Bridging the gap between manufacturers and healthcare providers worldwide</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Equalife Healthcare Corp, based in Orlando, Florida, is dedicated to connecting small and medium-sized manufacturers with distributors worldwide. With over 25 years of experience in international sales and 16 years specializing in medical devices, we've established ourselves as a trusted partner in the healthcare industry.</p>
+                    <p>We offer a diverse portfolio of high-quality consumable products at competitive prices, ensuring healthcare providers have access to reliable, innovative solutions that improve patient outcomes.</p>
+                    <p>Our strong, long-standing business relationships enable us to provide exceptional support and expertise, helping our partners navigate the complex healthcare marketplace with confidence.</p>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Products Offered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>30+</h3>
+                    <p>Countries Served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Offerings Section -->
+    <section id="offerings">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Products & Services</h2>
+                <p>High-quality medical solutions tailored to your needs</p>
+            </div>
+            <div class="offering-grid">
+                <div class="offering-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="offering-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12.5 4.5v1h1v1h-1v1h-1v-1h-1v-1h1v-1h1zm5.5 10h-10c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2h1v1h-1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1h-1v-1h1c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2zm-7-9h4v-1h-4v1zm2 13c-1.66 0-3-1.34-3-3h1c0 1.1.9 2 2 2s2-.9 2-2h1c0 1.66-1.34 3-3 3z"/>
+                        </svg>
+                    </div>
+                    <h3>Anesthesia & Surgery</h3>
+                    <ul>
+                        <li>Airway Management Devices</li>
+                        <li>Resuscitators & Anesthesia Masks</li>
+                        <li>Ventilation Circuits</li>
+                        <li>Closed Suction Catheters</li>
+                        <li>High Flow Nasal Cannulas</li>
+                    </ul>
+                </div>
+                <div class="offering-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="offering-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-13v2h4v-2h-4zm0 4v6h4v-6h-4z"/>
+                        </svg>
+                    </div>
+                    <h3>Respiratory Therapy</h3>
+                    <ul>
+                        <li>Oxygen Cannulas & Masks</li>
+                        <li>Non-Rebreathing Masks</li>
+                        <li>Nebulizers & Humidifiers</li>
+                        <li>Spirometers & Spacers</li>
+                        <li>Aerosol Delivery Systems</li>
+                    </ul>
+                </div>
+                <div class="offering-card fade-in" style="animation-delay: 0.6s;">
+                    <div class="offering-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2c-5.33 4-8 8.67-8 12 0 4.42 3.58 8 8 8s8-3.58 8-8c0-3.33-2.67-8-8-12zm0 18c-3.31 0-6-2.69-6-6 0-1 0-3 6-10 6 7 6 9 6 10 0 3.31-2.69 6-6 6zm-3.5-6c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5h-7z"/>
+                        </svg>
+                    </div>
+                    <h3>Emergency Care</h3>
+                    <ul>
+                        <li>Video Laryngoscopes</li>
+                        <li>Infusion Bags</li>
+                        <li>Diagnostic Tools</li>
+                        <li>Splints & Plasters</li>
+                        <li>Wound Management Kits</li>
+                    </ul>
+                </div>
+                <div class="offering-card fade-in" style="animation-delay: 0.8s;">
+                    <div class="offering-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.4c0-2 4-3.1 6-3.1s6 1.1 6 3.1V19z"/>
+                        </svg>
+                    </div>
+                    <h3>Specialty Solutions</h3>
+                    <ul>
+                        <li>Liposuction Cannulas</li>
+                        <li>Endotracheal Introducers</li>
+                        <li>OB/GYN Instruments</li>
+                        <li>Eye Protection Devices</li>
+                        <li>Infection Control Products</li>
+                    </ul>
+                </div>
+                <div class="offering-card fade-in" style="animation-delay: 1.0s;">
+                    <div class="offering-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                    </div>
+                    <h3>Product Development</h3>
+                    <ul>
+                        <li>Expert assistance in medical device development</li>
+                        <li>Innovative consumable product solutions</li>
+                        <li>Collaboration for quality assurance</li>
+                        <li>Custom designs for market needs</li>
+                    </ul>
+                </div>
+                <div class="offering-card fade-in" style="animation-delay: 1.2s;">
+                    <div class="offering-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Consulting Services</h3>
+                    <ul>
+                        <li>Growth advice for medical device businesses</li>
+                        <li>Regulatory compliance guidance</li>
+                        <li>Market entry strategies</li>
+                        <li>Understanding FDA, EU MDR, ISO</li>
+                        <li>Business development support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team to discuss your medical supply needs</p>
+        </div>
+        <div class="contact-container-full">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-detail">
+                        <h3>Address</h3>
+                        <p>Equalife Healthcare Corp</p>
+                        <p>Orlando, Florida, USA</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-detail">
+                        <h3>Email</h3>
+                        <a href="mailto:hajardo.equalife@gmail.com">hajardo.equalife@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-detail">
+                        <h3>Phone</h3>
+                        <a href="tel:+14074052869">1-407-405-2869</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-detail">
+                        <h3>Business Hours</h3>
+                        <p>Monday-Friday: 9AM-5PM EST</p>
+                        <p>Saturday-Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-cta">
+                <h3>Ready to discuss your medical supply needs?</h3>
+                <p>Reach out to us today to learn more about our products and services. Our team is ready to assist you with any questions you may have.</p>
+                <a href="mailto:hajardo.equalife@gmail.com" class="cta-btn">Email Us</a>
+                <a href="tel:+14074052869" class="cta-btn secondary">Call Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Updated Contact Section Styles */
+    #contact {
+        background: var(--grey);
+    }
+
+    .contact-container-full {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        max-width: 800px;
+    }
+
+    .contact-card {
+        background: var(--light);
+        border-radius: 10px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        height: 100%;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 204, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--primary);
+    }
+
+    .contact-detail h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 5px;
+    }
+
+    .contact-detail p, .contact-detail a {
+        font-size: 15px;
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-detail a:hover {
+        color: var(--primary);
+    }
+
+    .contact-cta {
+    background: var(--light);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-cta h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.contact-cta p {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.contact-cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    width: 100%;
+    justify-content: center;
+}
+
+.contact-cta .cta-btn {
+    padding: 12px 25px;
+    font-size: 15px;
+    min-width: 120px;
+}
+
+/* HTML structure for the CTA box */
+<div class="contact-cta">
+    <h3>Ready to discuss your medical supply needs?</h3>
+    <p>Reach out to us today to learn more about our products and services. Our team is ready to assist you with any questions you may have.</p>
+    <div class="contact-cta-buttons">
+        <a href="mailto:hajardo.equalife@gmail.com" class="cta-btn">Email Us</a>
+        <a href="tel:+14074052869" class="cta-btn secondary">Call Us</a>
+    </div>
+</div>
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<style>
+    /* About Section Styles */
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .about-text p {
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        color: var(--text-light);
+    }
+
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 25px 15px;
+        background: var(--grey);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .stat-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .stat-item h3 {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 10px;
+    }
+
+    .stat-item p {
+        font-size: 16px;
+        color: var(--text);
+    }
+
+    /* Offerings Section Styles */
+    #offerings {
+        background: var(--grey);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .offering-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        justify-items: center;
+    }
+
+    .offering-card {
+        background: var(--light);
+        border-radius: 15px;
+        padding: 30px;
+        width: 100%;
+        max-width: 350px;
+        height: 100%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-top: 5px solid var(--primary);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .offering-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .offering-icon {
+        margin-bottom: 20px;
+        width: 60px;
+        height: 60px;
+        background: rgba(0, 204, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+    }
+
+    .offering-icon svg {
+        width: 30px;
+        height: 30px;
+        fill: var(--primary);
+    }
+
+    .offering-card h3 {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .offering-card ul {
+        list-style: none;
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    .offering-card ul li {
+        font-size: 15px;
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 25px;
+        color: var(--text);
+    }
+
+    .offering-card ul li::before {
+        content: '✔';
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+        font-size: 15px;
+    }
+
+
+    /* Footer Styles */
+    footer {
+        background: var(--dark);
+        color: var(--light);
+        padding: 60px 0 20px;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-about h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--light);
+    }
+
+    .footer-about p {
+        font-size: 15px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+    }
+
+    .social-link svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--light);
+    }
+
+    .footer-links h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: var(--light);
+    }
+
+    .footer-links ul {
+        list-style: none;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links ul li a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+        color: var(--primary);
+        padding-left: 5px;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+        font-size: 20px;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 30px;
+        }
+
+        .footer-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mobile-toggle {
+            display: block;
+            z-index: 1001;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 250px;
+            height: 100vh;
+            background: var(--dark);
+            padding: 80px 20px 20px;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav.active {
+            right: 0;
+        }
+
+        nav ul {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+
+        .hero-content h1 {
+            font-size: 40px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .about-content, 
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+        }
+
+        .stats-container {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .hero-content h1 {
+            font-size: 32px;
+        }
+    }
+</style>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>Equalife Healthcare</h3>
+                    <p>Delivering high-quality medical devices and consumable products to healthcare providers worldwide. Our mission is to improve patient care through innovative solutions and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#offerings">Anesthesia & Surgery</a></li>
+                        <li><a href="#offerings">Respiratory Therapy</a></li>
+                        <li><a href="#offerings">Emergency Care</a></li>
+                        <li><a href="#offerings">Specialty Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#offerings">Product Development</a></li>
+                        <li><a href="#offerings">Consulting Services</a></li>
+                        <li><a href="#offerings">Regulatory Guidance</a></li>
+                        <li><a href="#contact">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Equalife Healthcare Corp. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a href="#hero" class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">▲</a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const nav = document.querySelector('#nav');
+        
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('active') && 
+                !nav.contains(e.target) && 
+                !mobileToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
+        // Smooth Scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+                
+                // Scroll to target
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header Scroll Effect
+        const header = document.querySelector('header');
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            // Header effect
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Scroll to top button visibility
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(element => {
+            element.style.animationPlayState = 'paused';
+            fadeObserver.observe(element);
+        });
+
+        // Form Submission (for demonstration - replace with actual form submission)
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // For demonstration purposes - would be replaced with actual form submission
+                const formData = new FormData(this);
+                const submitBtn = this.querySelector('.submit-btn');
+                
+                // Disable button and show sending state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                
+                // Simulate form submission (replace with actual AJAX call)
+                setTimeout(() => {
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Show success message (would be implemented properly)
+                    alert('Thank you for your message! We will get back to you soon.');
+                    
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+</html>
